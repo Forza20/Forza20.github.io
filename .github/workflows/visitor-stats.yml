@@ -29,9 +29,17 @@ jobs:
           start=$(date -u -d '365 days ago' +%Y-%m-%d)
           end=$(date -u +%Y-%m-%d)
 
+          # GoatCounter answers 404 when there is no data yet for the period
           fetch() {
-            curl -sSf -H "Authorization: Bearer $GC_TOKEN" \
-              "$GC_SITE/api/v0/stats/$1?start=$start&end=$end&limit=100" | jq '.stats'
+            local body status
+            body=$(mktemp)
+            status=$(curl -sS -o "$body" -w '%{http_code}' -H "Authorization: Bearer $GC_TOKEN" \
+              "$GC_SITE/api/v0/stats/$1?start=$start&end=$end&limit=100")
+            case "$status" in
+              200) jq '.stats // []' "$body" ;;
+              404) echo "No $1 data yet" >&2; echo '[]' ;;
+              *)   echo "GoatCounter returned $status for $1:" >&2; head -c 500 "$body" >&2; exit 1 ;;
+            esac
           }
 
           jq -n \
