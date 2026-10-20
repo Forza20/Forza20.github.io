@@ -8,12 +8,70 @@
      text in the HTML source. Change it via data-user / data-domain in
      index.html.
      ------------------------------------------------------------------ */
-  document.querySelectorAll(".js-email").forEach(function (link) {
+  var emailLinks = document.querySelectorAll(".js-email");
+  emailLinks.forEach(function (link) {
     var address = link.dataset.user + "@" + link.dataset.domain;
     link.href = "mailto:" + address;
     link.setAttribute("aria-label", "Send an e-mail to " + address);
     link.title = address;
+    link.hidden = false;
   });
+
+  /* ------------------------------------------------------------------
+     Contact section: show the address and a "Copy e-mail" button
+     ------------------------------------------------------------------ */
+  var contactAddress = emailLinks.length
+    ? emailLinks[0].dataset.user + "@" + emailLinks[0].dataset.domain
+    : "";
+  var addressText = document.querySelector(".js-email-text");
+  if (addressText && contactAddress) {
+    addressText.textContent = contactAddress;
+    addressText.hidden = false;
+  }
+
+  var copyButton = document.getElementById("copy-email");
+  var copyStatus = document.getElementById("copy-status");
+  if (copyButton && contactAddress) {
+    var copyLabel = copyButton.querySelector(".js-copy-label");
+    var resetTimer;
+
+    function copyFallback(text) {
+      var field = document.createElement("textarea");
+      field.value = text;
+      field.setAttribute("readonly", "");
+      field.style.position = "absolute";
+      field.style.left = "-9999px";
+      document.body.append(field);
+      field.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      field.remove();
+      return ok ? Promise.resolve() : Promise.reject();
+    }
+
+    copyButton.addEventListener("click", function () {
+      var copy = navigator.clipboard && window.isSecureContext
+        ? navigator.clipboard.writeText(contactAddress)
+        : copyFallback(contactAddress);
+
+      copy
+        .then(function () {
+          copyLabel.textContent = "Copied!";
+          copyStatus.textContent = "E-mail address copied to the clipboard.";
+        })
+        .catch(function () {
+          copyLabel.textContent = "Copy e-mail";
+          copyStatus.textContent = "Couldn't copy automatically. The address is " + contactAddress + ".";
+        });
+
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(function () {
+        copyLabel.textContent = "Copy e-mail";
+        copyStatus.textContent = "";
+      }, 4000);
+    });
+    copyButton.hidden = false;
+  }
 
   /* ------------------------------------------------------------------
      Footer year

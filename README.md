@@ -10,15 +10,17 @@ Live: https://forza20.github.io/
 | --- | --- |
 | `index.html` | All text and links |
 | `style.css` | Layout and colours (theme variables at the top under `:root`) |
-| `script.js` | E-mail link, scroll animations, game embed and full screen button |
+| `script.js` | E-mail links and copy button, scroll animations, game embed with fallback, visitor stats and full screen button |
 | `assets/favicon.svg` | Favicon |
 | `assets/og-image.png` | Preview image for links shared on LinkedIn, Slack etc. |
 
 ## Making changes
 
 - **Text:** edit `index.html` directly. Sections are marked with `<!-- HERO -->`, `<!-- ABOUT -->` and so on.
-- **Links:** GitHub and LinkedIn URLs appear in the hero and the footer in `index.html`.
-- **E-mail:** change `data-user` and `data-domain` on the two `js-email` links in `index.html`. The address is assembled in `script.js` so it never appears as plain text in the source.
+- **Links:** GitHub and LinkedIn URLs appear in the hero, the contact section and the footer in `index.html`.
+- **E-mail:** change `data-user` and `data-domain` on every `js-email` link in `index.html` (hero, contact section and footer). The address is assembled in `script.js` so it never appears as plain text in the source; the contact section and the "Copy e-mail" button use the first one.
+- **Game preview:** `assets/data-runner-poster.jpg` is shown behind the loading spinner and in the fallback card if the game can't load.
+- **Link previews:** `og:*` and `twitter:*` tags in the `<head>` of `index.html` use `assets/og-image.png` (1200 × 630).
 - **Colours:** change the variables at the top of `style.css`. `--accent` is the teal accent colour.
 - **Embedded game:** change `data-src` on `<div id="game">` and the direct links next to it.
 
