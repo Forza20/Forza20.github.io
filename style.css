@@ -328,6 +328,21 @@ a:hover { color: var(--accent-strong); }
 }
 .project__note { margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted); }
 
+/* Video */
+.video__frame {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.video__frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
