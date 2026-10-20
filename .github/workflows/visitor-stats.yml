@@ -1,0 +1,79 @@
+# Fetches visitor stats from GoatCounter once a day and saves the
+# percentage split (no counts) to assets/visitor-stats.json.
+# Needs the repo secret GOATCOUNTER_TOKEN (GoatCounter API key with "Read statistics").
+name: Update visitor stats
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch stats from GoatCounter
+        env:
+          GC_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+          GC_SITE: https://forza20.goatcounter.com
+          MIN_VISITORS: "10"   # below this the site shows "not enough data yet"
+          TOP_N: "5"           # remaining entries are grouped as "Other"
+        run: |
+          set -euo pipefail
+          start=$(date -u -d '365 days ago' +%Y-%m-%d)
+          end=$(date -u +%Y-%m-%d)
+
+          fetch() {
+            curl -sSf -H "Authorization: Bearer $GC_TOKEN" \
+              "$GC_SITE/api/v0/stats/$1?start=$start&end=$end&limit=100" | jq '.stats'
+          }
+
+          jq -n \
+            --argjson systems "$(fetch systems)" \
+            --argjson locations "$(fetch locations)" \
+            --argjson sizes "$(fetch sizes)" \
+            --argjson min "$MIN_VISITORS" \
+            --argjson top "$TOP_N" \
+            --arg updated "$end" '
+            def split:
+              map(select(.count > 0) | {name: (if .name == "" then "Unknown" else .name end), count})
+              | (map(.count) | add // 0) as $total
+              | sort_by(-.count)
+              | (.[:$top] + (if length > $top then [{name: "Other", count: (.[$top:] | map(.count) | add)}] else [] end))
+              | {total: $total, items: map({name, percent: ((.count * 1000 / ($total | if . == 0 then 1 else . end)) | round / 10)})};
+            ($systems | split) as $s
+            | ($locations | split) as $l
+            | ($sizes | split) as $z
+            | {
+                updated: $updated,
+                enough: (([$s.total, $l.total, $z.total] | max) >= $min),
+                systems: $s.items,
+                locations: $l.items,
+                sizes: $z.items
+              }
+            | if .enough then . else {updated, enough} end
+          ' > assets/visitor-stats.json
+
+          cat assets/visitor-stats.json
+
+      - name: Commit if changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/visitor-stats.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Update visitor stats"
+          git push
+          # Pushes made with the workflow token don't always trigger a Pages build
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

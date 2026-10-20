@@ -158,6 +158,17 @@
   </main>
 
   <footer class="site-footer" id="contact">
+    <section class="container visitors" id="visitors" aria-labelledby="visitors-title" hidden>
+      <h2 class="visitors__title" id="visitors-title">Who visits this site</h2>
+      <p class="visitors__note">Share of visitors over the last 12 months, via <a href="https://www.goatcounter.com/" target="_blank" rel="noopener noreferrer">GoatCounter<span class="visually-hidden"> (opens in a new tab)</span></a>. No cookies.</p>
+      <div class="visitors__grid">
+        <div class="visitors__group"><h3>Systems</h3><ul data-stat="systems"></ul></div>
+        <div class="visitors__group"><h3>Locations</h3><ul data-stat="locations"></ul></div>
+        <div class="visitors__group"><h3>Screen sizes</h3><ul data-stat="sizes"></ul></div>
+      </div>
+      <p class="visitors__empty" hidden>Not enough visitors yet to show a meaningful split. Check back later.</p>
+    </section>
+
     <div class="container footer__inner">
       <ul class="footer__links" aria-label="Contact">
         <li><a class="js-email" href="#contact" data-user="Forza20" data-domain="hotmail.com">E-mail</a></li>

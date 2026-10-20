@@ -26,6 +26,8 @@ Live: https://forza20.github.io/
 
 Page views are counted with [GoatCounter](https://www.goatcounter.com/) (no cookies, so no consent banner needed). Dashboard: https://forza20.goatcounter.com. The script tag is at the bottom of `index.html`. Visits from localhost are not counted.
 
+The "Who visits this site" section in the footer shows the share of visitors by system, location and screen size (percentages only, no counts). The GitHub Action in `.github/workflows/visitor-stats.yml` fetches the numbers from the GoatCounter API once a day and writes them to `assets/visitor-stats.json`. It needs the repo secret `GOATCOUNTER_TOKEN`: a GoatCounter API key with the "Read statistics" permission. Until there are at least 10 visitors the section shows "Not enough visitors yet". Run it by hand under Actions → Update visitor stats → Run workflow.
+
 ## Running locally
 
 ```bash

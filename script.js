@@ -98,6 +98,48 @@
   }
 
   /* ------------------------------------------------------------------
+     Visitor split (percentages only), updated daily by the
+     "Update visitor stats" GitHub Action. Stays hidden if missing.
+     ------------------------------------------------------------------ */
+  var visitors = document.getElementById("visitors");
+  if (visitors && window.fetch) {
+    fetch("assets/visitor-stats.json", { cache: "no-cache" })
+      .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
+      .then(function (data) {
+        if (!data.enough) {
+          visitors.querySelector(".visitors__grid").hidden = true;
+          visitors.querySelector(".visitors__empty").hidden = false;
+        } else {
+          visitors.querySelectorAll("[data-stat]").forEach(function (list) {
+            (data[list.dataset.stat] || []).forEach(function (item) {
+              var li = document.createElement("li");
+              var row = document.createElement("div");
+              var name = document.createElement("span");
+              var value = document.createElement("span");
+              var bar = document.createElement("div");
+              var fill = document.createElement("span");
+              row.className = "stat__row";
+              name.className = "stat__name";
+              value.className = "stat__value";
+              bar.className = "stat__bar";
+              bar.setAttribute("aria-hidden", "true");
+              name.textContent = item.name;
+              name.title = item.name;
+              value.textContent = item.percent + "%";
+              fill.style.width = Math.min(100, item.percent) + "%";
+              row.append(name, value);
+              bar.append(fill);
+              li.append(row, bar);
+              list.append(li);
+            });
+          });
+        }
+        visitors.hidden = false;
+      })
+      .catch(function () { /* no stats file: keep the section hidden */ });
+  }
+
+  /* ------------------------------------------------------------------
      Full screen: use the Fullscreen API on the iframe, otherwise open
      the game in a new tab (e.g. iPhone Safari).
      ------------------------------------------------------------------ */
