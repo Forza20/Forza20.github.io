@@ -22,6 +22,10 @@ Live: https://forza20.github.io/
 - **Colours:** change the variables at the top of `style.css`. `--accent` is the teal accent colour.
 - **Embedded game:** change `data-src` on `<div id="game">` and the direct links next to it.
 
+## Visitor stats
+
+Page views are counted with [GoatCounter](https://www.goatcounter.com/) (no cookies, so no consent banner needed). Dashboard: https://forza20.goatcounter.com. The script tag is at the bottom of `index.html`. Visits from localhost are not counted.
+
 ## Running locally
 
 ```bash
