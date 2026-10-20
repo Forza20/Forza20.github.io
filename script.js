@@ -59,23 +59,23 @@
     var src = game.dataset.src;
     var iframe = game.querySelector("iframe");
     var fallback = game.querySelector(".game__fallback");
-    var settled = false;
+    var loaded = false;
 
     function showError() {
-      if (settled) return;
-      settled = true;
+      if (loaded) return;
       game.classList.add("is-error");
       fallback.hidden = false;
-      iframe.hidden = true;
     }
     function showLoaded() {
-      if (settled) return;
-      settled = true;
+      loaded = true;
+      game.classList.remove("is-error");
       game.classList.add("is-loaded");
+      fallback.hidden = true;
     }
 
     // A cross-origin iframe fires "load" even for a 404 page, so check
     // that the game URL actually responds before trusting the load event.
+    // The timeout only shows the fallback; a slow load still replaces it.
     var timeout = setTimeout(showError, 15000);
     var reachable = window.fetch
       ? fetch(src, { method: "HEAD", cache: "no-store" })
@@ -84,7 +84,7 @@
       : Promise.resolve(true);
 
     reachable.then(function (ok) {
-      if (!ok) { clearTimeout(timeout); showError(); return; }
+      if (!ok) { clearTimeout(timeout); iframe.hidden = true; showError(); return; }
       iframe.addEventListener("load", function () {
         clearTimeout(timeout);
         showLoaded();

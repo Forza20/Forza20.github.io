@@ -274,7 +274,7 @@ a:hover { color: var(--accent-strong); }
   overflow: hidden;
 }
 @media (min-width: 720px) {
-  .game__frame { aspect-ratio: 16 / 9; max-height: none; }
+  .game__frame { aspect-ratio: 16 / 10; max-height: none; }
 }
 .game__frame iframe {
   position: absolute;
@@ -301,6 +301,7 @@ a:hover { color: var(--accent-strong); }
   text-align: center;
   color: var(--text-muted);
 }
+.game__fallback { z-index: 1; background: var(--surface); }
 .game__fallback[hidden],
 .game.is-loaded .game__loading,
 .game.is-error .game__loading { display: none; }
