@@ -50,7 +50,14 @@ jobs:
             --argjson top "$TOP_N" \
             --arg updated "$end" '
             def split:
-              map(select(.count > 0) | {name: (if .name == "" then "Unknown" else .name end), count})
+              # Screen sizes come back with an empty name and the group in .id
+              map(select(.count > 0) | {
+                name: (if (.name // "") != "" then .name
+                       else ({"phone": "Phone", "tablet": "Tablet", "desktop": "Desktop",
+                              "desktophd": "Desktop HD", "unknown": "Unknown"}[.id // ""] // "Unknown")
+                       end),
+                count
+              })
               | (map(.count) | add // 0) as $total
               | sort_by(-.count)
               | (.[:$top] + (if length > $top then [{name: "Other", count: (.[$top:] | map(.count) | add)}] else [] end))
