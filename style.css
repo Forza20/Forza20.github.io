@@ -123,7 +123,7 @@ a:hover { color: var(--accent-strong); }
   .nav__links { gap: 0; }
   .nav__links a { padding: 0.4rem 0.4rem; font-size: 0.85rem; }
 }
-/* Smallest phones: drop the "PLB" brand so all five links fit */
+/* Smallest phones: drop the "PB" brand so all five links fit */
 @media (max-width: 380px) {
   .nav__brand { display: none; }
   .nav { justify-content: center; }
@@ -199,6 +199,47 @@ a:hover { color: var(--accent-strong); }
   padding-top: clamp(4rem, 14vh, 8rem);
   padding-bottom: clamp(3rem, 10vh, 6rem);
 }
+/* "Open to new roles" badge above the name */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  background: rgb(45 212 191 / 0.08);
+  border: 1px solid rgb(45 212 191 / 0.35);
+  border-radius: 999px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.status-badge:hover { color: var(--text); border-color: var(--accent); background: rgb(45 212 191 / 0.14); }
+.status-badge__dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.status-badge__dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-out infinite;
+}
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.7; }
+  to   { transform: scale(2.6); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .status-badge__dot::after { display: none; }
+}
+
 .hero__eyebrow {
   color: var(--accent);
   font-size: 0.85rem;

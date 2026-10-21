@@ -1,4 +1,4 @@
-# Peter Lindholm-Bekker – portfolio
+# Peter Bekker – portfolio
 
 Personal website built with plain HTML, CSS and vanilla JavaScript. No frameworks, no build step.
 
