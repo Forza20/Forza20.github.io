@@ -46,7 +46,7 @@
       <ul class="nav__links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#project">Project</a></li>
+        <li><a href="#project">Projects</a></li>
         <li><a href="#video">Video</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -133,7 +133,7 @@
 
     <!-- PROJECT -->
     <section class="section container" id="project" aria-labelledby="project-title">
-      <h2 class="section__title reveal" id="project-title">Project</h2>
+      <h2 class="section__title reveal" id="project-title">Projects</h2>
       <article class="project reveal">
         <header class="project__header">
           <h3 class="project__name">Data Runner</h3>
@@ -178,6 +178,41 @@
           </a>
         </div>
         <p class="project__note">Trouble with the embed? <a href="https://forza20.github.io/data-runner/" target="_blank" rel="noopener noreferrer">Open the game directly<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
+      </article>
+
+      <article class="project reveal" id="data-model">
+        <header class="project__header">
+          <h3 class="project__name">The Nightmare Data Model</h3>
+          <p class="project__desc">A Power BI model built from a messy 23-sheet Excel export. I split it into clear dimensions and facts for sales, inventory, campaigns, order processing and targets, with shared dimensions, defined fact grains and a row-level security role.</p>
+        </header>
+
+        <figure class="model-shot">
+          <a href="assets/data-model-after.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="assets/data-model-after.jpg" width="1280" height="602" loading="lazy" decoding="async"
+                 alt="Power BI model view showing six dimension tables and six fact tables connected by one-to-many relationships">
+          </a>
+          <figcaption>Model view after restructuring: dimensions and facts kept separate.</figcaption>
+        </figure>
+
+        <ul class="tags project__tags" aria-label="Tools">
+          <li>Power BI</li>
+          <li>Power Query</li>
+          <li>DAX</li>
+          <li>TMDL / PBIP</li>
+          <li>Row-level security</li>
+        </ul>
+
+        <div class="project__actions">
+          <a class="btn btn--primary" href="assets/project_datamodel.pbix" download>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Download PBIX</span><span class="project__size">(370 KB)</span>
+          </a>
+          <a class="btn" href="https://github.com/Forza20/power-bi-data-modeling-project" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>View PBIP source on GitHub</span><span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </div>
+        <p class="project__note">Open the PBIX in <a href="https://www.microsoft.com/power-platform/products/power-bi/desktop" target="_blank" rel="noopener noreferrer">Power BI Desktop<span class="visually-hidden"> (opens in a new tab)</span></a> (free, Windows). Dataset and scenario by <a href="https://www.youtube.com/watch?v=0A2k62YEbfI" target="_blank" rel="noopener noreferrer">Data with Baraa<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
       </article>
     </section>
 

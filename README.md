@@ -13,6 +13,7 @@ Live: https://forza20.github.io/
 | `script.js` | E-mail links and copy button, scroll animations, game embed with fallback, visitor stats and full screen button |
 | `assets/favicon.svg` | Favicon |
 | `assets/og-image.png` | Preview image for links shared on LinkedIn, Slack etc. |
+| `assets/project_datamodel.pbix` | Download for the data model project. Copied from [power-bi-data-modeling-project](https://github.com/Forza20/power-bi-data-modeling-project); replace it here if the model changes there |
 
 ## Making changes
 
