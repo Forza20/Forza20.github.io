@@ -557,6 +557,23 @@ a:hover { color: var(--accent-strong); }
   overflow-wrap: anywhere;
 }
 .contact__address[hidden] { display: none; }
+.contact__phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 1.05rem;
+}
+.contact__phone .icon { color: var(--text-muted); }
+.contact__phone a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+}
+.contact__phone a:hover { color: var(--accent-strong); }
 .contact__actions { margin-top: 1.25rem; }
 .contact__status { min-height: 1.6em; margin-top: 0.75rem; font-size: 0.9rem; color: var(--accent); }
 
