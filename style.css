@@ -418,6 +418,34 @@ a:hover { color: var(--accent-strong); }
 .project__name { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.6rem; }
 .project__desc { color: var(--text-muted); font-size: 1.05rem; }
 
+/* Projects linked directly (#data-model etc.) clear the sticky header */
+.project { scroll-margin-top: 76px; }
+
+/* Challenge → Approach → Result */
+.case {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .case { grid-template-columns: repeat(3, 1fr); }
+}
+.case__step {
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.case dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.case dd { margin: 0.4rem 0 0; font-size: 0.925rem; color: var(--text-muted); }
+
 .game__frame {
   position: relative;
   width: 100%;

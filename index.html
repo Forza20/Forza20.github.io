@@ -278,8 +278,23 @@
       <article class="project reveal" id="data-model">
         <header class="project__header">
           <h3 class="project__name">The Nightmare Data Model</h3>
-          <p class="project__desc">A Power BI model built from a messy 23-sheet Excel export. I split it into clear dimensions and facts for sales, inventory, campaigns, order processing and targets, with shared dimensions, defined fact grains and a row-level security role.</p>
+          <p class="project__desc">A Power BI model built from a messy 23-sheet Excel export covering sales, inventory, campaigns, order processing and targets.</p>
         </header>
+
+        <dl class="case">
+          <div class="case__step">
+            <dt>Challenge</dt>
+            <dd>Related data was scattered across 23 sheets, with test records and duplicate products. A report on top of it could look right while its totals were inflated.</dd>
+          </div>
+          <div class="case__step">
+            <dt>Approach</dt>
+            <dd>Split the data into six shared dimensions and six facts, each with a defined grain, and added a role that limits customer data by region.</dd>
+          </div>
+          <div class="case__step">
+            <dt>Result</dt>
+            <dd>A model where every fact is filtered through the same dimensions, so totals can be checked and relationships are easy to follow.</dd>
+          </div>
+        </dl>
 
         <figure class="model-shot">
           <a href="assets/data-model-after.jpg" target="_blank" rel="noopener noreferrer">
@@ -313,8 +328,23 @@
       <article class="project reveal" id="dashboard">
         <header class="project__header">
           <h3 class="project__name">AdventureWorks Sales Report</h3>
-          <p class="project__desc">An interactive Power BI report that takes the reader from an executive dashboard down to individual products, customers and regions. It uses KPIs against targets, a what-if price parameter, field parameters and AI visuals to explain what drives the numbers.</p>
+          <p class="project__desc">An interactive Power BI report on sales for AdventureWorks, a fictional bike and outdoor-equipment company.</p>
         </header>
+
+        <dl class="case">
+          <div class="case__step">
+            <dt>Challenge</dt>
+            <dd>Give managers a quick view of revenue, profit, orders and returns, and let them find what drives the numbers without asking an analyst.</dd>
+          </div>
+          <div class="case__step">
+            <dt>Approach</dt>
+            <dd>A star schema with DAX measures for targets and month-on-month change, a what-if price parameter, field parameters and AI visuals.</dd>
+          </div>
+          <div class="case__step">
+            <dt>Result</dt>
+            <dd>Readers go from headline KPIs to individual products, customers and regions, and can test how a price change affects profit.</dd>
+          </div>
+        </dl>
 
         <figure class="model-shot">
           <a href="assets/adventureworks-dashboard.png" target="_blank" rel="noopener noreferrer">
