@@ -23,11 +23,11 @@
   ],
   "sizes": [
     {
-      "name": "Unknown",
+      "name": "Phone",
       "percent": 81.8
     },
     {
-      "name": "Unknown",
+      "name": "Desktop",
       "percent": 18.2
     }
   ]
