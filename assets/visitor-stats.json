@@ -1,4 +1,34 @@
 {
-  "updated": "2026-10-20",
-  "enough": false
+  "updated": "2026-10-21",
+  "enough": true,
+  "systems": [
+    {
+      "name": "Android",
+      "percent": 81.8
+    },
+    {
+      "name": "Windows",
+      "percent": 18.2
+    }
+  ],
+  "locations": [
+    {
+      "name": "Denmark",
+      "percent": 90.9
+    },
+    {
+      "name": "Sweden",
+      "percent": 9.1
+    }
+  ],
+  "sizes": [
+    {
+      "name": "Unknown",
+      "percent": 81.8
+    },
+    {
+      "name": "Unknown",
+      "percent": 18.2
+    }
+  ]
 }
