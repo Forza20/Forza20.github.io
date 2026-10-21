@@ -418,6 +418,20 @@ a:hover { color: var(--accent-strong); }
 .project__name { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.6rem; }
 .project__desc { color: var(--text-muted); font-size: 1.05rem; }
 
+/* Claude skills */
+.section__intro { max-width: 42rem; margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.05rem; }
+.ai-skills { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) {
+  .ai-skills { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 960px) {
+  .ai-skills { grid-template-columns: repeat(3, 1fr); }
+}
+.ai-skills .card__title { margin-bottom: 0.5rem; font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 0.95rem; overflow-wrap: anywhere; }
+.ai-skills .card__title a { color: var(--accent); text-decoration: none; }
+.ai-skills .card__title a:hover { color: var(--accent-strong); text-decoration: underline; }
+.ai-skills p { font-size: 0.925rem; color: var(--text-muted); }
+
 /* Projects linked directly (#data-model etc.) clear the sticky header */
 .project { scroll-margin-top: 76px; }
 
