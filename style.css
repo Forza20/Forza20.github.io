@@ -123,6 +123,11 @@ a:hover { color: var(--accent-strong); }
   .nav__links { gap: 0; }
   .nav__links a { padding: 0.4rem 0.4rem; font-size: 0.85rem; }
 }
+/* Smallest phones: drop the "PLB" brand so all five links fit */
+@media (max-width: 380px) {
+  .nav__brand { display: none; }
+  .nav { justify-content: center; }
+}
 @media (max-width: 360px) {
   .nav__links a { padding: 0.4rem 0.3rem; font-size: 0.8rem; }
 }
@@ -223,6 +228,24 @@ a:hover { color: var(--accent-strong); }
 
 .hero__actions { margin-top: 2.25rem; }
 
+/* Photo: above the name on phones, to the right of the text from 720px */
+.hero__grid { display: grid; gap: 1.75rem; }
+.hero__text { min-width: 0; }
+.hero__photo {
+  display: block;
+  width: 112px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+}
+@media (min-width: 720px) {
+  .hero__grid { grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+  .hero__photo { order: 2; width: 180px; }
+}
+
 .social-links {
   display: flex;
   flex-wrap: wrap;
@@ -295,6 +318,59 @@ a:hover { color: var(--accent-strong); }
   border: 1px solid rgb(45 212 191 / 0.25);
   border-radius: 999px;
 }
+
+/* Experience timeline */
+.timeline {
+  max-width: 42rem;
+  margin: 0 0 0 0.4rem;
+  padding: 0;
+  list-style: none;
+  border-left: 2px solid var(--border);
+}
+.job { position: relative; padding: 0 0 2.25rem 1.6rem; }
+.job:last-child { padding-bottom: 0.25rem; }
+.job::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 0.35rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+.job__meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.job__title { margin-top: 0.2rem; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+.job__company {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.975rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0;
+}
+.job__desc { margin-top: 0.6rem; color: var(--text-muted); }
+.job__list { margin-top: 0.6rem; padding-left: 1.1rem; list-style: disc; color: var(--text-muted); }
+.job__list li + li { margin-top: 0.35rem; }
+.job__list li::marker { color: var(--accent); }
+
+.subsection__title {
+  margin-top: clamp(2.5rem, 6vw, 3.5rem);
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.edu-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) {
+  .edu-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.edu__name { font-weight: 600; }
+.edu__meta { margin-top: 0.3rem; font-size: 0.9rem; color: var(--text-muted); }
 
 /* Project */
 .project__header { margin-bottom: 1.5rem; max-width: 42rem; }

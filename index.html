@@ -29,6 +29,22 @@
   <meta name="twitter:image" content="https://forza20.github.io/assets/og-image.png">
   <meta name="twitter:image:alt" content="Peter Lindholm-Bekker – Business Analytics Lead, Power BI &amp; Data Modelling">
 
+  <!-- Tells search engines who this page is about -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Peter Lindholm-Bekker",
+    "jobTitle": "Business Analytics Lead",
+    "url": "https://forza20.github.io/",
+    "image": "https://forza20.github.io/assets/peter.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Copenhagen", "addressCountry": "DK" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Copenhagen Business School" },
+    "knowsAbout": ["Power BI", "DAX", "Semantic modelling", "Data modelling", "SQL", "Qlik Sense", "Data visualisation"],
+    "sameAs": ["https://www.linkedin.com/in/peter-bekker-4a25744/", "https://github.com/Forza20"]
+  }
+  </script>
+
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add("js");</script>
 
@@ -46,8 +62,8 @@
       <ul class="nav__links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#project">Projects</a></li>
-        <li><a href="#video">Video</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -56,6 +72,9 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero container" id="top" aria-labelledby="hero-title">
+      <div class="hero__grid">
+      <img class="hero__photo reveal" src="assets/peter.jpg" width="220" height="275" alt="Portrait of Peter Lindholm-Bekker">
+      <div class="hero__text">
       <p class="hero__eyebrow reveal">Copenhagen, Denmark</p>
       <h1 class="hero__title reveal" id="hero-title">Peter Lindholm-Bekker</h1>
       <p class="hero__role reveal">Business Analytics Lead <span aria-hidden="true">|</span> Power BI &amp; Data Modelling</p>
@@ -89,6 +108,8 @@
           </a>
         </li>
       </ul>
+      </div>
+      </div>
     </section>
 
     <!-- ABOUT -->
@@ -110,25 +131,99 @@
           <ul class="tags">
             <li>Power BI</li>
             <li>DAX</li>
+            <li>Power Query</li>
             <li>Semantic modelling</li>
             <li>Tabular Editor</li>
+            <li>Data visualisation</li>
           </ul>
         </article>
         <article class="card reveal">
-          <h3 class="card__title">Data &amp; Platforms</h3>
+          <h3 class="card__title">Data &amp; Analytics</h3>
           <ul class="tags">
             <li>SQL</li>
             <li>Snowflake (DirectQuery)</li>
             <li>R</li>
+            <li>Qlik Sense</li>
+            <li>Adobe Analytics</li>
+            <li>Google Analytics</li>
+            <li>Speech Analytics</li>
           </ul>
         </article>
         <article class="card reveal">
-          <h3 class="card__title">Delivery</h3>
+          <h3 class="card__title">Delivery &amp; Advisory</h3>
           <ul class="tags">
             <li>Azure DevOps CI/CD</li>
+            <li>Stakeholder management</li>
+            <li>Requirements to solution</li>
+            <li>Decision support</li>
+            <li>PRINCE2</li>
           </ul>
         </article>
       </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section container" id="experience" aria-labelledby="experience-title">
+      <h2 class="section__title reveal" id="experience-title">Experience</h2>
+      <ol class="timeline">
+        <li class="job reveal">
+          <p class="job__meta"><time datetime="2026-05">May 2026</time> – <time datetime="2026-07">Jul 2026</time></p>
+          <h3 class="job__title">Business Analytics Lead <span class="job__company">NTT DATA Business Solutions</span></h3>
+          <p class="job__desc">Helped clients turn business requirements into Power BI solutions. Main stack: DAX, Power BI and Azure DevOps.</p>
+        </li>
+        <li class="job reveal">
+          <p class="job__meta"><time datetime="2025-08">Aug 2025</time> – <time datetime="2026-01">Jan 2026</time></p>
+          <h3 class="job__title">Senior Consultant <span class="job__company">Enversion A/S</span></h3>
+          <p class="job__desc">Hired to help the Danish Health Data Authority (Sundhedsdatastyrelsen) build a Power BI dashboard, delivered as the public <a href="#dual-diagnosis">dual diagnosis report</a>.</p>
+        </li>
+        <li class="job reveal">
+          <p class="job__meta"><time datetime="2020-02">Feb 2020</time> – <time datetime="2025-07">Jul 2025</time></p>
+          <h3 class="job__title">Business Intelligence Analyst <span class="job__company">Saxo</span></h3>
+          <ul class="job__list">
+            <li>Started as the organisation's only BI resource, providing end-to-end Qlik Sense support and advice across all departments.</li>
+            <li>Analysed pricing strategies and customer behaviour, contributing to higher revenue and better margins.</li>
+            <li>Identified key churn drivers and analysed marketing campaigns with Qlik Sense and Google Analytics.</li>
+          </ul>
+        </li>
+        <li class="job reveal">
+          <p class="job__meta"><time datetime="2018-03">Mar 2018</time> – <time datetime="2020-01">Jan 2020</time></p>
+          <h3 class="job__title">Senior Digital Business Analyst <span class="job__company">YouSee</span></h3>
+          <ul class="job__list">
+            <li>Used Adobe Analytics to improve online self-service and reduce the number of customer calls.</li>
+            <li>Built Power BI reports that supported better customer journeys and higher customer satisfaction.</li>
+          </ul>
+        </li>
+        <li class="job reveal">
+          <p class="job__meta"><time datetime="2014-09">Sep 2014</time> – <time datetime="2018-03">Mar 2018</time></p>
+          <h3 class="job__title">Business Analyst <span class="job__company">Netdesign</span></h3>
+          <p class="job__desc">Helped external clients implement and use Speech Analytics to find patterns in customer interactions and make support workflows more efficient.</p>
+        </li>
+        <li class="job reveal">
+          <p class="job__meta">2008 – 2014</p>
+          <h3 class="job__title">Earlier roles</h3>
+          <p class="job__desc">Senior Analyst at Telenor, Process Manager at TDC, Process Manager and Process Consultant at YouSee, and Process Consultant at IMPAC.</p>
+        </li>
+      </ol>
+
+      <h3 class="subsection__title reveal">Education &amp; certifications</h3>
+      <ul class="edu-grid">
+        <li class="card reveal">
+          <p class="edu__name">MSc in Economics and Business Administration</p>
+          <p class="edu__meta">Management, Accounting &amp; Control · Copenhagen Business School · 2008</p>
+        </li>
+        <li class="card reveal">
+          <p class="edu__name">Data Science &amp; Big Data Analytics</p>
+          <p class="edu__meta">EMC Education · 2015</p>
+        </li>
+        <li class="card reveal">
+          <p class="edu__name">PRINCE2 Practitioner</p>
+          <p class="edu__meta">MetierWestergaard · 2013</p>
+        </li>
+        <li class="card reveal">
+          <p class="edu__name">PRINCE2 Foundation</p>
+          <p class="edu__meta">MetierWestergaard · 2012</p>
+        </li>
+      </ul>
     </section>
 
     <!-- PROJECT -->
@@ -137,7 +232,7 @@
       <article class="project reveal" id="dual-diagnosis">
         <header class="project__header">
           <h3 class="project__name">Integrated Dual Diagnosis Treatment</h3>
-          <p class="project__desc">A public Power BI report on integrated treatment for people with both a mental illness and a substance use problem. I built it as an external consultant for the Danish Health Data Authority (Sundhedsdatastyrelsen), and it is published on eSundhed.dk.</p>
+          <p class="project__desc">A public Power BI report on integrated treatment for people with both a mental illness and a substance use problem. I built it as a Senior Consultant at Enversion A/S, hired to help the Danish Health Data Authority (Sundhedsdatastyrelsen) create the dashboard, and it is published on eSundhed.dk.</p>
         </header>
 
         <figure class="model-shot">

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Peter Lindholm-Bekker</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0a0b0d">
+  <!-- Absolute paths: this page is shown for any missing URL, at any depth -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .notfound { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-block: 4rem; }
+    .notfound__code { color: var(--accent); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.85rem; }
+    .notfound h1 { margin-top: 1rem; font-size: clamp(2rem, 7vw, 3.25rem); font-weight: 700; }
+    .notfound p { margin-top: 1rem; max-width: 34rem; color: var(--text-muted); font-size: 1.05rem; }
+    .notfound .hero__actions { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <main class="container notfound">
+    <p class="notfound__code">Error 404</p>
+    <h1>This page doesn't exist</h1>
+    <p>The link may be old or mistyped. Everything on the site is on the front page: projects, experience and how to get in touch.</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary btn--lg" href="/">Go to the front page</a>
+      <a class="btn btn--lg" href="/#project">See my projects</a>
+    </div>
+  </main>
+  <script data-goatcounter="https://forza20.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
