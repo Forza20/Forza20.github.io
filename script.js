@@ -12,6 +12,9 @@
   emailLinks.forEach(function (link) {
     var address = link.dataset.user + "@" + link.dataset.domain;
     link.href = "mailto:" + address;
+    // Webmail handlers (Outlook.com, Gmail) open in a new tab instead of replacing the site
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
     link.setAttribute("aria-label", "Send an e-mail to " + address);
     link.title = address;
     link.hidden = false;
