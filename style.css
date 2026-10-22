@@ -327,6 +327,25 @@ a:hover { color: var(--accent-strong); }
 .about { display: grid; gap: 1rem; max-width: 42rem; }
 .about p { font-size: 1.075rem; color: var(--text); }
 .about p + p { color: var(--text-muted); }
+.about .about__lead { font-size: clamp(1.35rem, 3.5vw, 1.6rem); font-weight: 700; letter-spacing: -0.01em; color: var(--text); }
+.pain-list { display: grid; gap: 0.6rem; }
+.pain-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+.pain-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.62em;
+  width: 0.6rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.about p.about__cta { font-size: 1.15rem; font-weight: 600; color: var(--text); }
 
 /* Skills */
 .skills-grid {
