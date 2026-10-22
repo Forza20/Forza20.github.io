@@ -274,7 +274,7 @@ a:hover { color: var(--accent-strong); }
 .hero__text { min-width: 0; }
 .hero__photo {
   display: block;
-  width: 112px;
+  width: 136px;
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
@@ -283,8 +283,9 @@ a:hover { color: var(--accent-strong); }
   background: var(--surface);
 }
 @media (min-width: 720px) {
-  .hero__grid { grid-template-columns: auto 1fr; align-items: center; gap: 3rem; }
-  .hero__photo { width: 200px; }
+  /* The hero text is long, so the photo sits at the top instead of centred */
+  .hero__grid { grid-template-columns: auto 1fr; align-items: start; gap: clamp(2rem, 3.5vw, 2.5rem); }
+  .hero__photo { width: clamp(180px, 22vw, 220px); }
 }
 
 .social-links {
@@ -328,6 +329,12 @@ a:hover { color: var(--accent-strong); }
 .about p { font-size: 1.075rem; color: var(--text); }
 .about p + p { color: var(--text-muted); }
 .about .about__lead { font-size: clamp(1.35rem, 3.5vw, 1.6rem); font-weight: 700; letter-spacing: -0.01em; color: var(--text); }
+.hero__about {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 76px;
+}
 .pain-list { display: grid; gap: 0.6rem; }
 .pain-list li {
   position: relative;
@@ -338,11 +345,11 @@ a:hover { color: var(--accent-strong); }
 .pain-list li::before {
   content: "";
   position: absolute;
-  left: 0.2rem;
+  left: 0.3rem;
   top: 0.62em;
-  width: 0.6rem;
-  height: 2px;
-  border-radius: 2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
   background: var(--accent);
 }
 .about p.about__cta { font-size: 1.15rem; font-weight: 600; color: var(--text); }
