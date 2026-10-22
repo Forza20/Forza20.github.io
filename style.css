@@ -269,7 +269,7 @@ a:hover { color: var(--accent-strong); }
 
 .hero__actions { margin-top: 2.25rem; }
 
-/* Photo: above the name on phones, to the right of the text from 720px */
+/* Photo: above the name on phones, to the left of the text from 720px */
 .hero__grid { display: grid; gap: 1.75rem; }
 .hero__text { min-width: 0; }
 .hero__photo {
@@ -283,8 +283,8 @@ a:hover { color: var(--accent-strong); }
   background: var(--surface);
 }
 @media (min-width: 720px) {
-  .hero__grid { grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
-  .hero__photo { order: 2; width: 180px; }
+  .hero__grid { grid-template-columns: auto 1fr; align-items: center; gap: 3rem; }
+  .hero__photo { width: 200px; }
 }
 
 .social-links {
