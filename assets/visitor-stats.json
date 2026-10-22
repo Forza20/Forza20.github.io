@@ -1,34 +1,25 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "enough": true,
-  "systems": [
-    {
-      "name": "Android",
-      "percent": 81.8
-    },
-    {
-      "name": "Windows",
-      "percent": 18.2
-    }
-  ],
+  "systems": [],
   "locations": [
     {
       "name": "Denmark",
-      "percent": 90.9
+      "percent": 96
     },
     {
       "name": "Sweden",
-      "percent": 9.1
+      "percent": 4
     }
   ],
   "sizes": [
     {
       "name": "Phone",
-      "percent": 81.8
+      "percent": 72
     },
     {
       "name": "Desktop",
-      "percent": 18.2
+      "percent": 28
     }
   ]
 }
