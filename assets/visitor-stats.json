@@ -1,37 +1,37 @@
 {
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "enough": true,
   "systems": [],
   "locations": [
     {
       "name": "Denmark",
-      "percent": 91.4
+      "percent": 91.9
     },
     {
       "name": "Russia",
-      "percent": 2.9
+      "percent": 2.7
     },
     {
       "name": "Sweden",
-      "percent": 2.9
+      "percent": 2.7
     },
     {
       "name": "United States",
-      "percent": 2.9
+      "percent": 2.7
     }
   ],
   "sizes": [
     {
       "name": "Phone",
-      "percent": 68.6
+      "percent": 70.3
     },
     {
       "name": "Desktop",
-      "percent": 28.6
+      "percent": 27
     },
     {
       "name": "Tablet",
-      "percent": 2.9
+      "percent": 2.7
     }
   ]
 }
