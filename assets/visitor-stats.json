@@ -1,24 +1,7 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-10-31",
   "enough": true,
-  "systems": [
-    {
-      "name": "Android",
-      "percent": 46.3
-    },
-    {
-      "name": "Windows",
-      "percent": 37
-    },
-    {
-      "name": "iOS",
-      "percent": 13
-    },
-    {
-      "name": "Linux",
-      "percent": 3.7
-    }
-  ],
+  "systems": [],
   "locations": [
     {
       "name": "Denmark",
