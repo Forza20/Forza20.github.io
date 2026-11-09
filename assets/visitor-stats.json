@@ -1,15 +1,15 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "enough": true,
   "systems": [],
   "locations": [
     {
       "name": "Denmark",
-      "percent": 84
+      "percent": 84.2
     },
     {
       "name": "United States",
-      "percent": 12
+      "percent": 11.9
     },
     {
       "name": "Switzerland",
@@ -31,11 +31,11 @@
   "sizes": [
     {
       "name": "Phone",
-      "percent": 58
+      "percent": 57.4
     },
     {
       "name": "Desktop",
-      "percent": 33
+      "percent": 33.7
     },
     {
       "name": "Tablet",
