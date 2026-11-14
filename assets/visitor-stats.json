@@ -1,70 +1,49 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "enough": true,
-  "systems": [
-    {
-      "name": "Windows",
-      "percent": 41.3
-    },
-    {
-      "name": "Android",
-      "percent": 33.7
-    },
-    {
-      "name": "iOS",
-      "percent": 22.1
-    },
-    {
-      "name": "Linux",
-      "percent": 1.9
-    },
-    {
-      "name": "macOS",
-      "percent": 1
-    }
-  ],
+  "systems": [],
   "locations": [
     {
       "name": "Denmark",
-      "percent": 84.6
+      "percent": 85
     },
     {
       "name": "United States",
-      "percent": 11.5
+      "percent": 11.2
     },
     {
       "name": "Switzerland",
-      "percent": 1
+      "percent": 0.9
     },
     {
       "name": "Chile",
-      "percent": 1
+      "percent": 0.9
     },
     {
       "name": "Russia",
-      "percent": 1
+      "percent": 0.9
     },
     {
       "name": "Other",
-      "percent": 1
+      "percent": 0.9
     }
   ],
   "sizes": [
     {
       "name": "Phone",
-      "percent": 55.8
+      "percent": 57
     },
     {
       "name": "Desktop",
-      "percent": 35.6
+      "percent": 34.6
     },
     {
       "name": "Tablet",
-      "percent": 4.8
+      "percent": 4.7
     },
     {
       "name": "Desktop HD",
-      "percent": 3.8
+      "percent": 3.7
     }
   ]
 }
