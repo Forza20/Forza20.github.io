@@ -636,6 +636,11 @@ a:hover { color: var(--accent-strong); }
 .project__size { font-weight: 400; opacity: 0.75; }
 
 /* Video */
+.video__frame--square {
+  max-width: 560px;
+  margin-inline: auto;
+}
+.video__frame.video__frame--square video { aspect-ratio: 1 / 1; }
 .video__frame {
   background: var(--surface);
   border: 1px solid var(--border);

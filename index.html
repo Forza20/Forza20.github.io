@@ -201,6 +201,43 @@
     <!-- PROJECT -->
     <section class="section container" id="project" aria-labelledby="project-title">
       <h2 class="section__title reveal" id="project-title">Projects</h2>
+      <article class="project reveal" id="math-learning-analytics">
+        <header class="project__header">
+          <h3 class="project__name">Math Learning Analytics</h3>
+          <p class="project__desc">A math game for children aged 8–12, and the data pipeline behind it. Every answer becomes an event in Postgres. Each night a GitHub Actions run adds simulated players, builds and tests a dbt medallion (bronze, silver, gold) that classifies every wrong answer by type of mistake, and publishes a static dashboard and the dbt docs. No personal data is stored.</p>
+        </header>
+        <div class="video__frame video__frame--square">
+          <video controls muted playsinline preload="metadata" width="1080" height="1080">
+            <source src="assets/math-learning-analytics.mp4#t=0.1" type="video/mp4">
+            <p>Your browser can't play this video. <a href="assets/math-learning-analytics.mp4">Download the video</a>.</p>
+          </video>
+        </div>
+
+        <h4 class="project__subhead">Highlights</h4>
+        <ul class="tags project__tags" aria-label="Highlights">
+          <li>Insert-only event stream (RLS)</li>
+          <li>dbt with about 50 tests</li>
+          <li>Mistake classification in SQL</li>
+          <li>Nightly GitHub Actions</li>
+          <li>Python simulator</li>
+        </ul>
+
+        <div class="project__actions">
+          <a class="btn btn--primary" href="https://forza20.github.io/math-learning-analytics/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Play the game</span><span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+          <a class="btn" href="https://forza20.github.io/math-learning-analytics/dashboard/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Dashboard</span><span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+          <a class="btn" href="https://github.com/Forza20/math-learning-analytics" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Code on GitHub</span><span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </div>
+      </article>
+
       <article class="project reveal" id="pipeline-video">
         <header class="project__header">
           <h3 class="project__name">Pipeline explainer</h3>
