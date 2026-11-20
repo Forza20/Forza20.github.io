@@ -201,6 +201,49 @@
     <!-- PROJECT -->
     <section class="section container" id="project" aria-labelledby="project-title">
       <h2 class="section__title reveal" id="project-title">Projects</h2>
+      <article class="project reveal" id="pipeline-video">
+        <header class="project__header">
+          <h3 class="project__name">Pipeline explainer</h3>
+        </header>
+        <div class="video__frame">
+          <video controls muted playsinline preload="metadata" width="1920" height="1080">
+            <source src="assets/pipeline-explainer.mp4#t=0.1" type="video/mp4">
+            <p>Your browser can't play this video. <a href="assets/pipeline-explainer.mp4">Download the video</a>.</p>
+          </video>
+        </div>
+      </article>
+
+      <article class="project reveal" id="claude-skills">
+        <header class="project__header">
+          <h3 class="project__name">Claude skills for Power BI</h3>
+          <p class="project__desc">Four Claude skills and setups I built for my own Power BI work. The skills are written in Danish and free to use under the MIT licence.</p>
+        </header>
+        <ul class="ai-skills">
+          <li class="card reveal">
+            <h3 class="card__title"><a href="https://github.com/Forza20/pipeline-data-warehouse" target="_blank" rel="noopener noreferrer">pipeline-power-bi setup<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p>Test bench that builds a medallion warehouse in Supabase and a PBIP report from a messy dataset, then scores the result against an answer key.</p>
+          </li>
+          <li class="card reveal">
+            <h3 class="card__title"><a href="https://github.com/Forza20/claude-powerbi-skills/tree/main/.claude/skills/pbip-catalog" target="_blank" rel="noopener noreferrer">pbip-catalog<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p>Creates a data catalog (Excel), data lineage with Mermaid and a dbdiagram.io model for a PBIP project.</p>
+          </li>
+          <li class="card reveal">
+            <h3 class="card__title"><a href="https://github.com/Forza20/claude-powerbi-skills/tree/main/.claude/skills/pbip-layout" target="_blank" rel="noopener noreferrer">pbip-layout<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p>Applies a report template with colours, navigation and bookmarks to a PBIP project and binds it to your own measures.</p>
+          </li>
+          <li class="card reveal">
+            <h3 class="card__title"><a href="https://github.com/Forza20/claude-powerbi-skills/tree/main/skills/pbip-governance" target="_blank" rel="noopener noreferrer">pbip-governance<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+            <p>Documents a PBIP project: data lineage, possible PII columns, RLS and an Azure DevOps wiki.</p>
+          </li>
+        </ul>
+        <div class="project__actions">
+          <a class="btn" href="https://github.com/Forza20/claude-powerbi-skills" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>View all skills on GitHub</span><span class="visually-hidden"> (opens in a new tab)</span>
+          </a>
+        </div>
+      </article>
+
       <article class="project reveal" id="dual-diagnosis">
         <header class="project__header">
           <h3 class="project__name">Integrated Dual Diagnosis Treatment</h3>
@@ -396,49 +439,6 @@
         </div>
         <p class="project__note">Trouble with the embed? <a href="https://forza20.github.io/data-runner/" target="_blank" rel="noopener noreferrer">Open the game directly<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
       </article>
-    </section>
-
-    <!-- PIPELINE EXPLAINER VIDEO -->
-    <section class="section container" id="pipeline-video" aria-labelledby="pipeline-video-title">
-      <h2 class="section__title reveal" id="pipeline-video-title">Pipeline explainer</h2>
-      <article class="project reveal">
-        <div class="video__frame">
-          <video controls muted playsinline preload="metadata" width="1920" height="1080">
-            <source src="assets/pipeline-explainer.mp4#t=0.1" type="video/mp4">
-            <p>Your browser can't play this video. <a href="assets/pipeline-explainer.mp4">Download the video</a>.</p>
-          </video>
-        </div>
-      </article>
-    </section>
-
-    <!-- CLAUDE SKILLS -->
-    <section class="section container" id="claude-skills" aria-labelledby="claude-skills-title">
-      <h2 class="section__title reveal" id="claude-skills-title">Claude skills for Power BI</h2>
-      <p class="section__intro reveal">Four Claude skills and setups I built for my own Power BI work. The skills are written in Danish and free to use under the MIT licence.</p>
-      <ul class="ai-skills">
-        <li class="card reveal">
-          <h3 class="card__title"><a href="https://github.com/Forza20/pipeline-data-warehouse" target="_blank" rel="noopener noreferrer">pipeline-power-bi setup<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-          <p>Test bench that builds a medallion warehouse in Supabase and a PBIP report from a messy dataset, then scores the result against an answer key.</p>
-        </li>
-        <li class="card reveal">
-          <h3 class="card__title"><a href="https://github.com/Forza20/claude-powerbi-skills/tree/main/.claude/skills/pbip-catalog" target="_blank" rel="noopener noreferrer">pbip-catalog<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-          <p>Creates a data catalog (Excel), data lineage with Mermaid and a dbdiagram.io model for a PBIP project.</p>
-        </li>
-        <li class="card reveal">
-          <h3 class="card__title"><a href="https://github.com/Forza20/claude-powerbi-skills/tree/main/.claude/skills/pbip-layout" target="_blank" rel="noopener noreferrer">pbip-layout<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-          <p>Applies a report template with colours, navigation and bookmarks to a PBIP project and binds it to your own measures.</p>
-        </li>
-        <li class="card reveal">
-          <h3 class="card__title"><a href="https://github.com/Forza20/claude-powerbi-skills/tree/main/skills/pbip-governance" target="_blank" rel="noopener noreferrer">pbip-governance<span class="visually-hidden"> (opens in a new tab)</span></a></h3>
-          <p>Documents a PBIP project: data lineage, possible PII columns, RLS and an Azure DevOps wiki.</p>
-        </li>
-      </ul>
-      <div class="project__actions">
-        <a class="btn" href="https://github.com/Forza20/claude-powerbi-skills" target="_blank" rel="noopener noreferrer">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>View all skills on GitHub</span><span class="visually-hidden"> (opens in a new tab)</span>
-        </a>
-      </div>
     </section>
 
     <!-- VIDEO -->
